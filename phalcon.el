@@ -111,6 +111,12 @@
   (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/modules/frontend/views"))))
 
 ;;;###autoload
+(defun phalcon-volt ()
+  "Open phalcon volt directory."
+  (interactive)
+  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/modules/frontend/views"))))
+
+;;;###autoload
 (defun phalcon-form ()
   "Open phalcon form directory."
   (interactive)
