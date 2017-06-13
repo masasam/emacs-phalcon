@@ -4,7 +4,7 @@
 
 ;; Author: Masashı Mıyaura
 ;; URL: https://github.com/masasam/emacs-phalcon
-;; Version: 0.1
+;; Version: 0.2
 ;; Package-Requires: ((emacs "24.4"))
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -42,7 +42,8 @@
 (defun phalcon-app ()
   "Open phalcon app directory."
   (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app"))))
+  (setq default-directory (concat phalcon-basedir "app"))
+  (find-file default-directory))
 
 ;;;###autoload
 (defun phalcon-config ()
