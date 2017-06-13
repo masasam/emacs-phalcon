@@ -67,7 +67,7 @@
   (find-file (expand-file-name (phalcon-currentfilename) (concat phalcon-basedir "app/models/services/Service/"))))
 
 ;;;###autoload
-(defun phalcon-criterias ()
+(defun phalcon-criteria ()
   "Open phalcon criterias directory."
   (interactive)
   (find-file (expand-file-name (concat (phalcon-currentfilecorename) "Criteria.php") (concat phalcon-basedir "app/models/criterias"))))
