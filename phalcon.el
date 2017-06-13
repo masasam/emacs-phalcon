@@ -4,7 +4,7 @@
 
 ;; Author: Masashı Mıyaura
 ;; URL: https://github.com/masasam/emacs-phalcon
-;; Version: 0.2
+;; Version: 0.3
 ;; Package-Requires: ((emacs "24.4"))
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -38,12 +38,46 @@
   :group 'phalcon
   :type 'string)
 
+(defun phalcon-currentfilename ()
+  "Get current file name."
+  (file-name-nondirectory
+   (buffer-file-name)))
+
+;;;###autoload
+(defun phalcon-entities ()
+  "Open phalcon entities file same as current file."
+  (interactive)
+  (find-file (expand-file-name (phalcon-currentfilename) (concat phalcon-basedir "app/models/entities/"))))
+
+;;;###autoload
+(defun phalcon-repository ()
+  "Open phalcon repository file same as current file."
+  (interactive)
+  (find-file (expand-file-name (phalcon-currentfilename) (concat phalcon-basedir "app/models/repositories/Repository/"))))
+
+;;;###autoload
+(defun phalcon-service ()
+  "Open phalcon service file same as current file.."
+  (interactive)
+  (find-file (expand-file-name (phalcon-currentfilename) (concat phalcon-basedir "app/models/services/Service/"))))
+
+;;;###autoload
+(defun phalcon-toml ()
+  "Open phalcon toml file."
+  (interactive)
+  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/messages/ja.toml"))))
+
+;;;###autoload
+(defun phalcon-admin-toml ()
+  "Open phalcon admin toml file."
+  (interactive)
+  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/messages/admin.ja.toml"))))
+
 ;;;###autoload
 (defun phalcon-app ()
   "Open phalcon app directory."
   (interactive)
-  (setq default-directory (concat phalcon-basedir "app"))
-  (find-file default-directory))
+  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app"))))
 
 ;;;###autoload
 (defun phalcon-config ()
@@ -62,24 +96,6 @@
   "Open phalcon criterias directory."
   (interactive)
   (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/models/criterias"))))
-
-;;;###autoload
-(defun phalcon-entities ()
-  "Open phalcon entities directory."
-  (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/models/entities"))))
-
-;;;###autoload
-(defun phalcon-repository ()
-  "Open phalcon repository directory."
-  (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/models/repositories/Repository"))))
-
-;;;###autoload
-(defun phalcon-service ()
-  "Open phalcon service directory."
-  (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/models/services/Service"))))
 
 ;;;###autoload
 (defun phalcon-frontend ()
@@ -140,18 +156,6 @@
   "Open phalcon public directory."
   (interactive)
   (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/messages"))))
-
-;;;###autoload
-(defun phalcon-toml ()
-  "Open phalcon toml file."
-  (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/messages/ja.toml"))))
-
-;;;###autoload
-(defun phalcon-admin-toml ()
-  "Open phalcon admin toml file."
-  (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/messages/admin.ja.toml"))))
 
 (provide 'phalcon)
 
