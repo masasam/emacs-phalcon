@@ -43,6 +43,11 @@
   (file-name-nondirectory
    (buffer-file-name)))
 
+(defun phalcon-currentfilecorename ()
+  "Get current file core name."
+  (file-name-nondirectory
+   (file-name-sans-extension (buffer-file-name))))
+
 ;;;###autoload
 (defun phalcon-entities ()
   "Open phalcon entities file same as current file."
@@ -60,6 +65,12 @@
   "Open phalcon service file same as current file.."
   (interactive)
   (find-file (expand-file-name (phalcon-currentfilename) (concat phalcon-basedir "app/models/services/Service/"))))
+
+;;;###autoload
+(defun phalcon-criterias ()
+  "Open phalcon criterias directory."
+  (interactive)
+  (find-file (expand-file-name (concat (phalcon-currentfilecorename) "Criteria.php") (concat phalcon-basedir "app/models/criterias"))))
 
 ;;;###autoload
 (defun phalcon-toml ()
@@ -90,12 +101,6 @@
   "Open phalcon config directory."
   (interactive)
   (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/config"))))
-
-;;;###autoload
-(defun phalcon-criterias ()
-  "Open phalcon criterias directory."
-  (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/models/criterias"))))
 
 ;;;###autoload
 (defun phalcon-controller ()
