@@ -49,7 +49,7 @@
    (file-name-sans-extension (buffer-file-name))))
 
 ;;;###autoload
-(defun phalcon-entities ()
+(defun phalcon-entity ()
   "Open phalcon entities file same as current file."
   (interactive)
   (find-file (expand-file-name (phalcon-currentfilename) (concat phalcon-basedir "app/models/entities/"))))
