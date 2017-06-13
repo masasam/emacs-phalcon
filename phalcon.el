@@ -74,6 +74,12 @@
   (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/messages/admin.ja.toml"))))
 
 ;;;###autoload
+(defun phalcon-service-directory ()
+  "Open phalcon service directory."
+  (interactive)
+  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/models/services/Service"))))
+
+;;;###autoload
 (defun phalcon-app ()
   "Open phalcon app directory."
   (interactive)
@@ -86,46 +92,16 @@
   (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/config"))))
 
 ;;;###autoload
-(defun phalcon-model ()
-  "Open phalcon model directory."
-  (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/models"))))
-
-;;;###autoload
 (defun phalcon-criterias ()
   "Open phalcon criterias directory."
   (interactive)
   (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/models/criterias"))))
 
 ;;;###autoload
-(defun phalcon-frontend ()
-  "Open phalcon frontend directory."
-  (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/modules/frontend"))))
-
-;;;###autoload
-(defun phalcon-backend ()
-  "Open phalcon backend directory."
-  (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/modules/backend"))))
-
-;;;###autoload
 (defun phalcon-controller ()
   "Open phalcon controller directory."
   (interactive)
   (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/modules/frontend/controllers"))))
-
-;;;###autoload
-(defun phalcon-admin-controller ()
-  "Open phalcon admin controller directory."
-  (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/modules/frontend/controllers/Admin"))))
-
-;;;###autoload
-(defun phalcon-view ()
-  "Open phalcon view directory."
-  (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/modules/frontend/views"))))
 
 ;;;###autoload
 (defun phalcon-volt ()
@@ -138,24 +114,6 @@
   "Open phalcon form directory."
   (interactive)
   (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/utils/Forms"))))
-
-;;;###autoload
-(defun phalcon-util ()
-  "Open phalcon util directory."
-  (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/utils"))))
-
-;;;###autoload
-(defun phalcon-public ()
-  "Open phalcon public directory."
-  (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "phalcon/public"))))
-
-;;;###autoload
-(defun phalcon-locale ()
-  "Open phalcon public directory."
-  (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/messages"))))
 
 (provide 'phalcon)
 
