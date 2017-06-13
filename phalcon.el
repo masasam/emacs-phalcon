@@ -40,10 +40,11 @@
 
 (defun phalcon-currentfilename ()
   "Get current file name."
-  (file-name-nondirectory
-   (buffer-file-name)))
+  (if (string-match "Criteria" (file-name-nondirectory (buffer-file-name)))
+      (replace-match "" t t (file-name-nondirectory (buffer-file-name)))
+    (file-name-nondirectory (buffer-file-name))))
 
-(defun phalcon-currentfilecorename ()
+(defun phalcon-currentfile-corename ()
   "Get current file core name."
   (file-name-nondirectory
    (file-name-sans-extension (buffer-file-name))))
@@ -70,7 +71,7 @@
 (defun phalcon-criteria ()
   "Open phalcon criterias directory."
   (interactive)
-  (find-file (expand-file-name (concat (phalcon-currentfilecorename) "Criteria.php") (concat phalcon-basedir "app/models/criterias"))))
+  (find-file (expand-file-name (concat (phalcon-currentfile-corename) "Criteria.php") (concat phalcon-basedir "app/models/criterias"))))
 
 ;;;###autoload
 (defun phalcon-toml ()
