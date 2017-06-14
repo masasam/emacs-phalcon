@@ -56,6 +56,12 @@
   (find-file (expand-file-name (phalcon-currentfilename) (concat phalcon-basedir "app/models/entities/"))))
 
 ;;;###autoload
+(defun phalcon-entity-directory ()
+  "Open phalcon entities directory."
+  (interactive)
+  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/models/entities/"))))
+
+;;;###autoload
 (defun phalcon-repository ()
   "Open phalcon repository file same as current file."
   (interactive)
