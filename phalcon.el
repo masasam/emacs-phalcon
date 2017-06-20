@@ -4,7 +4,7 @@
 
 ;; Author: Masashı Mıyaura
 ;; URL: https://github.com/masasam/emacs-phalcon
-;; Version: 0.3
+;; Version: 0.3.1
 ;; Package-Requires: ((emacs "24.4"))
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -22,10 +22,7 @@
 
 ;;; Commentary:
 
-;; Emacs major mode for writing blogs made with hugo
-;; by markdown or org-mode or AsciiDoc or reStructuredText or mmark or html.
-;; You can publish your blog to the server or Github Pages
-;; or Amazon S3 or Google Cloud Storage.
+;; Phalcon Framework util.
 
 ;;; Code:
 
