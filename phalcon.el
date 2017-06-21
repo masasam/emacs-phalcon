@@ -53,12 +53,6 @@
   (find-file (expand-file-name (phalcon-currentfilename) (concat phalcon-basedir "app/models/entities/"))))
 
 ;;;###autoload
-(defun phalcon-entity-directory ()
-  "Open phalcon entities directory."
-  (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/models/entities/"))))
-
-;;;###autoload
 (defun phalcon-repository ()
   "Open phalcon repository file same as current file."
   (interactive)
@@ -75,54 +69,6 @@
   "Open phalcon criterias directory."
   (interactive)
   (find-file (expand-file-name (concat (phalcon-currentfile-corename) "Criteria.php") (concat phalcon-basedir "app/models/criterias"))))
-
-;;;###autoload
-(defun phalcon-toml ()
-  "Open phalcon toml file."
-  (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/messages/ja.toml"))))
-
-;;;###autoload
-(defun phalcon-admin-toml ()
-  "Open phalcon admin toml file."
-  (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/messages/admin.ja.toml"))))
-
-;;;###autoload
-(defun phalcon-service-directory ()
-  "Open phalcon service directory."
-  (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/models/services/Service"))))
-
-;;;###autoload
-(defun phalcon-app ()
-  "Open phalcon app directory."
-  (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app"))))
-
-;;;###autoload
-(defun phalcon-config ()
-  "Open phalcon config directory."
-  (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/config"))))
-
-;;;###autoload
-(defun phalcon-controller ()
-  "Open phalcon controller directory."
-  (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/modules/frontend/controllers"))))
-
-;;;###autoload
-(defun phalcon-volt ()
-  "Open phalcon volt directory."
-  (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/modules/frontend/views"))))
-
-;;;###autoload
-(defun phalcon-form ()
-  "Open phalcon form directory."
-  (interactive)
-  (switch-to-buffer (find-file-noselect (concat phalcon-basedir "app/utils/Forms"))))
 
 (provide 'phalcon)
 
